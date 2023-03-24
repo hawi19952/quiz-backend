@@ -8,9 +8,10 @@ const { STRING, BOOLEAN, TEXT, INTEGER } = DataTypes
 export const sequelize = new Sequelize({
   host: DB_HOST || 'localhost',
   username: DB_USER || "root",
+  database: DB_NAME || "database",
   password: DB_PASSWORD,
   dialect: "mysql",
-  database: DB_NAME
+  logging: false
 });
 
 
