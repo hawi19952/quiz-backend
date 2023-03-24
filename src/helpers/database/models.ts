@@ -77,3 +77,10 @@ Response.belongsTo(Assessment, {
     name: 'assessmentId'
   }
 })
+
+Assessment.belongsTo(Quiz, {
+  foreignKey: {
+    allowNull: false,
+    name: 'quizId'
+  }
+})
