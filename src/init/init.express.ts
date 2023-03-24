@@ -1,5 +1,5 @@
 import { Application, json } from "express";
-import { PORT, NODE_ENV } from "../helpers/env";
+import { PORT, NODE_ENV } from "../helpers/env.js";
 
 export default ( app: Application ) => {
   app.use(json());
