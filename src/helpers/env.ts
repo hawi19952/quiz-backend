@@ -11,5 +11,9 @@ config({
 });
 
 export const {
-  PORT
+  PORT,
+  DB_HOST,
+  DB_PASSWORD,
+  DB_USER,
+  DB_NAME
 } = process.env;
