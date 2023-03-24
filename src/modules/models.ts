@@ -1,12 +1,13 @@
 import { DataTypes, Sequelize, TableHints } from "sequelize"
-import { DB_HOST, DB_PASSWORD, DB_USER } from "../helpers/env.js";
+import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from "../helpers/env.js";
 
 const { STRING, BOOLEAN, TEXT, INTEGER } = DataTypes
 export const sequelize = new Sequelize({
   host: DB_HOST || 'localhost',
   username: DB_USER || "root",
   password: DB_PASSWORD,
-  dialect: "mysql"
+  dialect: "mysql",
+  database: DB_NAME
 }); //TODO: Configure for mySQL database
 
 const id = {
