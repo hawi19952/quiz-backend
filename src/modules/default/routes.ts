@@ -4,5 +4,5 @@ import { controllers } from "./controllers/index.js";
 
 
 export default (app: Application) => {
-  app.get('api/all/', makeCallback(controllers.createQuiz));
+  app.get('/api/all/', makeCallback(controllers.createQuiz));
 }
