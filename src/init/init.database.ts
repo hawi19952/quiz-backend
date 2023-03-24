@@ -1,4 +1,4 @@
-import { sequelize } from '../modules/models.js'
+import { sequelize } from '../helpers/database/models.js'
 
 export default () => {
   sequelize.sync();

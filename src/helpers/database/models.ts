@@ -1,29 +1,18 @@
 import { DataTypes, Sequelize, TableHints } from "sequelize"
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from "../helpers/env.js";
+import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from "./../env.js"
+import { id, tableDefaultConfigs } from "./default.table.configs.js";
+
 
 const { STRING, BOOLEAN, TEXT, INTEGER } = DataTypes
+
 export const sequelize = new Sequelize({
   host: DB_HOST || 'localhost',
   username: DB_USER || "root",
   password: DB_PASSWORD,
   dialect: "mysql",
   database: DB_NAME
-}); //TODO: Configure for mySQL database
+});
 
-const id = {
-  type: DataTypes.INTEGER,
-  autoIncrement: true,
-  allowNull: false, 
-  unique: true,
-  primaryKey: true,
-};
-
-const tableDefaultConfigs = {
-  timestamps: true,
-  updatedAt: true,
-  createdAt: true,
-  paranoid: true
-};
 
 const Quiz = sequelize.define('Quiz', {
   id,
