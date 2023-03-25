@@ -1,6 +1,15 @@
 import { Quiz } from "../../../helpers/database/models.js";
 import { Request } from 'express';
 import createQuestion from "../../question/functions/create.question.js";
+import { IQuestion } from "../../question/functions/create.question.js";
+
+
+export interface ICreateQuiz {
+  title: string,
+  description?: string,
+  isPublished?: boolean,
+  questions?: Array<IQuestion>
+}
 
 export default async (req: Request) => {
   let createdQuestions = [];
