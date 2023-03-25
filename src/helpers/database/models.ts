@@ -26,12 +26,12 @@ const Question = sequelize.define('Question', {
   id,
   statement:        { type: STRING,   allowNull: false},
   isMandatory:      { type: BOOLEAN,  allowNull: false, defaultValue: false},
-  correctAnswerId:  { type: INTEGER,  allowNull: false } // TODO:Add the relationship
 }, tableDefaultConfigs);
 
 const Answer = sequelize.define('Answer', {
   id,
   statement:        { type: STRING,   allowNull: false},
+  isCorrect:        { type: BOOLEAN,  allowNull: false, defaultValue: false}
 }, tableDefaultConfigs);
 
 const Response = sequelize.define('Response', {
@@ -84,3 +84,11 @@ Assessment.belongsTo(Quiz, {
     name: 'quizId'
   }
 })
+
+export {
+  Quiz,
+  Question,
+  Answer,
+  Response,
+  Assessment
+}
