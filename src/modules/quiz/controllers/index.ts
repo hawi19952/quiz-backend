@@ -1,4 +1,4 @@
-import createQuiz from "./create.quiz.js";
+import createQuiz from "./post.quiz.js";
 
 export default {
   createQuiz
