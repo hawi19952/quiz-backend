@@ -1,10 +1,10 @@
 import { Application } from "express";
 import initExpress from "./init.express.js";
 import initDatabase from "./init.database.js";
-import routes from "../modules/default/routes.js";
+import initModules from "./init.modules.js";
 
 export default (app: Application) => {
-  initExpress(app);
-  routes(app);
   initDatabase();
+  initModules(app);
+  initExpress(app);
 }
