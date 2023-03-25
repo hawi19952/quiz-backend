@@ -1,6 +1,8 @@
 - [ ] 🎉 for request that doesn't have parentId, make sure to cover this case.
+- [ ] 🎉 add POST endpoints for assessment -> note that responses will be hidden under assessment
 - [ ] 🎉 add joi validation to all endpoints
 - [ ] 🎉 list PUT operations to create their functions and endpoints
+    - [ ] 🎉 Quiz can be published only when the quiz have questions and all questions have a correct answer
 - [ ] 🎉 cover the error codes schema
 - [ ] 🎉 check on sql errors and makecallback(error) flow
 - [ ] 🎉 deploy in Heruku or AWS 
