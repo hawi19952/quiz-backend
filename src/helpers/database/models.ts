@@ -64,13 +64,6 @@ Response.belongsTo(Answer, {
   }
 })
 
-Response.belongsTo(Question, {
-  foreignKey: {
-    allowNull: false,
-    name: 'questionId'
-  }
-});
-
 Response.belongsTo(Assessment, {
   foreignKey: {
     allowNull: false,
