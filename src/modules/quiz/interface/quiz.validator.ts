@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const answerValidation = Joi.object().keys({
+export const answerValidation = Joi.object().keys({
   statement: Joi.string(),
   isCorrect: Joi.boolean().default(false)
 })

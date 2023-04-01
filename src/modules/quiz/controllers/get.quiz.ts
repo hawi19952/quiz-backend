@@ -9,7 +9,7 @@ export default async (req: Request, res:Response) => {
   const foundQuiz = await getQuizById(id);
 
   if(!foundQuiz) {
-    return reportError(`No Quiz Found with the id : ${id}`, 2, res)
+    return reportError(`No quiz found with the id : ${id}`, 404, res)
   }
 
   return sendResponse(foundQuiz, res)

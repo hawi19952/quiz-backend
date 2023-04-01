@@ -4,7 +4,7 @@ export default async (quizId: number | string) => {
   const foundQuiz = await Quiz.findOne(
     {
       where: {
-        quizId
+        id: quizId
       },
       include: {
         model: Question,
