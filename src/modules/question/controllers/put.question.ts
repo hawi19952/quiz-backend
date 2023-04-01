@@ -29,7 +29,5 @@ export default async (req: Request, res: Response) => {
     return reportError(`No update was done on question with id: ${id}`, 304, res)
   }
 
-  return sendResponse(affectedCount, res); 
+  return sendResponse(`Updated ${affectedCount} Question/s successfully`, res); 
 }
-
-// question = 3
