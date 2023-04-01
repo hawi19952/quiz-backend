@@ -22,12 +22,12 @@ export default async (req: Request) => {
     isPublished
   });
 
-  const quizId = createdQuiz.dataValues.id
+  const QuizId = createdQuiz.dataValues.id
   
   if (questions) {
     for (let i = 0; i < questions.length; i++) {
       const question = questions[i];
-      const createdQuestion = await createQuestion(quizId, question)
+      const createdQuestion = await createQuestion(QuizId, question)
       createdQuestions.push(createdQuestion);
     }
   }

@@ -7,20 +7,20 @@ export interface IQuestion {
   isMandatory?: boolean,
   answers?: Array<IAnswer>
 }
-export default async (quizId: number, question: IQuestion) => {
+export default async (QuizId: number, question: IQuestion) => {
   let createdAnswers = [];
 
   const { statement, isMandatory, answers } = question;
       const createdQuestion = await Question.create({
-        quizId,
+        QuizId,
         statement,
         isMandatory
       })
       if (answers) {
-        const questionId = createdQuestion.dataValues.id
+        const QuestionId = createdQuestion.dataValues.id
         for (let i = 0; i < answers.length; i++) {
           const answer = answers[i];
-          const createdAnswer = await createAnswer(questionId, answer);
+          const createdAnswer = await createAnswer(QuestionId, answer);
           createdAnswers.push(createdAnswer)
         }
       }

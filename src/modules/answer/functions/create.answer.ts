@@ -6,10 +6,10 @@ export interface IAnswer {
   isCorrect: Boolean
 }
 
-export default async (questionId: number, answer: IAnswer) => {
+export default async (QuestionId: number, answer: IAnswer) => {
   const { statement, isCorrect } = answer;
   const createdAnswer = await Answer.create({
-    questionId,
+    QuestionId,
     statement,
     isCorrect
   })

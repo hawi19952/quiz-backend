@@ -43,40 +43,12 @@ const Assessment = sequelize.define('Assessment', {
   id
 }, tableDefaultConfigs);
 
-Question.belongsTo(Quiz, {
-  foreignKey: {
-    allowNull: false,
-    name: 'quizId'
-  }
-})
+Quiz.hasMany(Question)
+Quiz.hasMany(Assessment)
+Question.hasMany(Answer)
+Assessment.hasMany(Response)
+Answer.hasMany(Response)
 
-Answer.belongsTo(Question, {
-  foreignKey: {
-    allowNull: false,
-    name: 'questionId'
-  }
-})
-
-Response.belongsTo(Answer, {
-  foreignKey: {
-    allowNull: false,
-    name: 'answerId'
-  }
-})
-
-Response.belongsTo(Assessment, {
-  foreignKey: {
-    allowNull: false,
-    name: 'assessmentId'
-  }
-})
-
-Assessment.belongsTo(Quiz, {
-  foreignKey: {
-    allowNull: false,
-    name: 'quizId'
-  }
-})
 
 export {
   Quiz,
