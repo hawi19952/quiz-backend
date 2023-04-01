@@ -1,0 +1,15 @@
+{
+  "quizId": 1,
+  "statement": "Does these questions make any sense?",
+  "isMandatory": true,
+  "answers": [
+    {
+      "statement": "Yes it does",
+      "isCorrect": true
+    },
+    {
+      "statement": "Hell no, it doesn't",
+      "isCorrect": false
+    }
+  ]
+}
