@@ -6,8 +6,8 @@ export default (error: Error | any, errorCode: number ,res?: Response) => {
   if(res) {
     const errorResponse: IHttpResponse = {
       success: false,
-      error: [errorCode], //BUG:define #2 #1 error codes
-      data: {}
+      errors: [errorCode], //BUG:define #2 #1 error codes
+      data: {error}
     }
     return res.status(404).send(errorResponse);
   }
