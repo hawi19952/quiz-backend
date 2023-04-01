@@ -1,20 +1,15 @@
 import { Request, Response } from "express";
-import { Question } from "../../../helpers/database/models.js";
-import { Op } from "sequelize";
+import reportError from "../../../helpers/report.error.js";
+import sendResponse from "../../../helpers/send.response.js";
+import getQuestion from "../functions/get.question.js";
 
 export default async (req: Request, res: Response) => {
-  const { quizId, questionId } = req.body;
+  const { id } = req.params;
 
-  if(questionId) {
-    const foundQuestion = await Question.findOne({
-      where: {
-        id: questionId
-      }
-    })
-    return res.status(200).send(foundQuestion)
+  const foundQuestion = await getQuestion(id);
+
+  if(!foundQuestion) {
+    return reportError(`No question found with the id: ${id}`, 404, res);
   }
-  const foundQuestions = await Question.findAll({
-    where: quizId
-  })
-  return res.status(200).send(foundQuestions);
+  return sendResponse(foundQuestion, res);
 }
