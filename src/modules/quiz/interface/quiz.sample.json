@@ -1,0 +1,43 @@
+{
+  "title": "Test Quiz",
+  "description": "Test Quiz Description",
+  "isPublished": false,
+  "questions": [
+    {
+      "statement": "What is the color of apple?",
+      "isMandatory": true,
+      "answers": [
+        {
+          "statement": "Black",
+          "isCorrect": false
+        },
+        {
+          "statement": "Yellow",
+          "isCorrect": false
+        },
+        {
+          "statement": "Red Dead Redumption",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "statement": "Which is the longest of these options?",
+      "isMandatory": true,
+      "answers": [
+        {
+          "statement": "Effel Tower",
+          "isCorrect": false
+        },
+        {
+          "statement": "Khalifa Tower",
+          "isCorrect": false
+        },
+        {
+          "statement": "Yo MAMA",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
