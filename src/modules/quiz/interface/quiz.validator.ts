@@ -19,3 +19,8 @@ export default Joi.object().keys({
   isPublished: Joi.boolean().default(false),
   questions: Joi.array().items(questionValidation)
 })
+
+
+export const quizIdValidation = Joi.object().keys({
+  id: Joi.number().min(1).required()
+})
